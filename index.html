@@ -98,18 +98,21 @@
           <div class="contact-links">
             <a href="mailto:hello@minjun.dev">hello@minjun.dev <span>↗</span></a>
             <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
-            <a href="https://rememberapp.co.kr/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+            <a href="https://rememberapp.co.kr/" target="_blank" rel="noreferrer">Remember App <span>↗</span></a>
           </div>
         </div>
-        <form class="contact-form reveal" id="contact-form">
+        <form class="contact-form reveal" id="contact-form" novalidate>
           <label for="name">이름 <span>*</span></label>
-          <input id="name" name="name" type="text" placeholder="홍길동" required>
+          <input id="name" name="name" type="text" placeholder="이름" aria-describedby="name-error" required>
+          <p class="field-error" id="name-error" hidden></p>
           <label for="email">이메일 <span>*</span></label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          <input id="email" name="email" type="email" placeholder="you@example.com" aria-describedby="email-error" required>
+          <p class="field-error" id="email-error" hidden></p>
           <label for="message">메시지 <span>*</span></label>
-          <textarea id="message" name="message" rows="4" placeholder="어떤 이야기를 나누고 싶으신가요?" required></textarea>
+          <textarea id="message" name="message" rows="4" placeholder="어떤 이야기를 나누고 싶으신가요?" aria-describedby="message-error" required></textarea>
+          <p class="field-error" id="message-error" hidden></p>
           <button class="button button-primary" type="submit">메시지 보내기 <span>↗</span></button>
-          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </section>
     </main>
